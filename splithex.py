@@ -5,22 +5,21 @@ import os
 
 from pathlib import Path
 
-LINES_PER_FILE = 1350
-
 
 def main(argv):
-    if len(argv) != 2:
+    if len(argv) != 3:
         splithex = os.path.basename(argv[0] if len(argv) > 0 else "splithex")
-        print(f"Usage:    {splithex} <file>")
+        print(f"Usage:    {splithex} <file> <lines_per_file>")
         return 2
 
+    lines_per_file = int(argv[2])
     src_path = Path(argv[1])
     with open(src_path) as srcf:
         i_name = 1
         dstf = open(src_path.with_stem(f"{src_path.stem}{i_name}"), "w", newline="\r\n")
         for i, line in enumerate(srcf):
             dstf.write(line)
-            if ((i + 1) % LINES_PER_FILE) == 0:
+            if ((i + 1) % lines_per_file) == 0:
                 dstf.close()
                 i_name += 1
                 dstf = open(
