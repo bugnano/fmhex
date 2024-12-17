@@ -33,6 +33,12 @@ While I was at it, given that the program to encode BOO files is written in
 pre-standard C, I rewrote it in Python, so that it's easier to run on modern
 Linux systems.
 
+## Video tutorials
+
+https://www.youtube.com/watch?v=7kecyLA1IWM
+
+https://www.youtube.com/watch?v=sMRAU8F5wEs (Italian)
+
 ## The problem
 
 MS-DOS does not have a serial communication program included, but if the only
